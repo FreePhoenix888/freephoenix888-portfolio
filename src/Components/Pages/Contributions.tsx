@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import {ALL_CONTRIBUTIONS, CONTRIBUTIONS} from "../../Data/Contributions";
 import {Contribution} from "../Contribution";
-import {ALL_TOOLS} from "../../Data/TOOLS";
+import {ALL_TOOLS} from "../../Data/Tools";
 import {
     ArrowLeft as ArrowLeftIcon,
     ArrowRight as ArrowRightIcon,

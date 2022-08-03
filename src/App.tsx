@@ -5,7 +5,7 @@ import avatar from "./static/media/images/avatar.png";
 import computerRoom from "./static/media/images/computer_room.jpg";
 import {grey} from "@mui/material/colors";
 import {AvatarAndName} from "./Components/AvatarAndName";
-import {ALL_TOOLS, LANGUAGE_TOOLS, TOOLS} from "./Data/TOOLS";
+import {ALL_TOOLS, LANGUAGE_TOOLS, TOOLS} from "./Data/Tools";
 import TextTransition, {presets} from "react-text-transition";
 import {randomIntFromInterval} from "./Utils";
 import {Link, Route, Routes, useLocation} from "react-router-dom";

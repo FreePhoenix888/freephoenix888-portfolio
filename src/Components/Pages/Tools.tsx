@@ -1,4 +1,4 @@
-import {GROUPED_TOOLS, TOOLS} from "../../Data/TOOLS";
+import {GROUPED_TOOLS, TOOLS} from "../../Data/Tools";
 import {Icon, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader} from "@mui/material";
 import {ToolChip} from "../ToolChip";
 import {ToolData} from "../../Models/ToolData";
