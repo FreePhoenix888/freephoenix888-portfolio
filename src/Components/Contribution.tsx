@@ -1,6 +1,10 @@
 import {ContributionData as ContributionData} from "../Models/ContributionData";
 import {Box, Link, Paper, Typography} from "@mui/material";
-import {Tools} from "./Tools";
+import {ToolsTags} from "./ToolsTags";
+import {grey} from "@mui/material/colors";
+import computerRoom from "../static/media/images/computer_room.jpg";
+import React from "react";
+import {THEME} from "../Data/Theme";
 
 interface Props {
     contributionData: ContributionData
@@ -12,7 +16,7 @@ export const Contribution = ({contributionData}: Props) => {
             <Link href={contributionData.url}><Typography variant={"h2"}>{contributionData.name}</Typography></Link>
             <Typography variant={"h3"}>{contributionData.description}</Typography>
             {contributionData.body}
-            <Tools toolsData={contributionData.toolsData}/>
+            <ToolsTags toolsData={contributionData.toolsData}/>
         </Box>
     </Paper>
 }
