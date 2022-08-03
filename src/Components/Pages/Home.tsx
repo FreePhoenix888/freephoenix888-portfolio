@@ -10,6 +10,8 @@ import {randomIntFromInterval} from "../../Utils";
 import {Container} from "../Container";
 import {grey} from "@mui/material/colors";
 import computerRoom from "../../static/media/images/computer_room.jpg";
+import {Work as WorkIcon} from "@mui/icons-material";
+import {Tools as ToolsIcon} from "mdi-material-ui";
 
 interface Props {
     languageTools: ToolData[]
@@ -66,16 +68,20 @@ export const Home = ({languageTools}: Props) => {
                     </TextTransition>
                 </Box>
             </Typography>
-            <Link to={"/contributions"}>
-                <Button variant={"contained"} sx={{marginTop: "24px"}} size={"large"}>
-                    See what I do
-                </Button>
-            </Link>
-            <Link to={"/tools"}>
-                <Button variant={"contained"} sx={{marginTop: "24px"}} size={"large"}>
-                    Tools I use
-                </Button>
-            </Link>
+            <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                <Link to={"/contributions"}>
+                    <Button variant={"contained"} sx={{marginTop: "24px"}} size={"large"} startIcon={<WorkIcon/>}>
+                        <Typography>
+                            What I do
+                        </Typography>
+                    </Button>
+                </Link>
+                <Link to={"/tools"}>
+                    <Button variant={"contained"} sx={{marginTop: "24px"}} size={"large"} startIcon={<ToolsIcon/>}>
+                        Tools I use
+                    </Button>
+                </Link>
+            </Box>
             </Container>
         </Box>
 }
