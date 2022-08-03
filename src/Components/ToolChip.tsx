@@ -5,8 +5,8 @@ interface Props {
     toolData: ToolData
 }
 
-export const Tool = ({toolData}: Props) => {
+export const ToolChip = ({toolData}: Props) => {
     return <Chip color={"default"} icon={toolData.imgSrc ?
-        <Icon sx={{fill: "red"}}><img src={toolData.imgSrc} alt={toolData.name}/></Icon> : undefined}
+        <Icon><img src={toolData.imgSrc} alt={toolData.name}/></Icon> : undefined}
                  label={toolData.name}/>
 }
