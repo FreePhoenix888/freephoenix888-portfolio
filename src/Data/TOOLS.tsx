@@ -14,6 +14,7 @@ import {Css, Html} from "@mui/icons-material";
 import {Node} from "postcss";
 import {camelCaseToTitleCase} from "../Utils";
 import {ToolDataGroupEnum} from "../Enums/ToolDataGroupEnum";
+import * as _ from "lodash";
 
 // const LANGUAGE_TOOLS = {
 //     "c": new ToolData({name: "C", imgSrc: "https://img.icons8.com/color/48/c-programming.svg", infoSrc: "https://en.wikipedia.org/wiki/C_(programming_language)", group: ToolDataGroupEnum.Language}),
@@ -167,19 +168,19 @@ export const TOOLS = {
     }),
     "json": new ToolData({
         name: "JSON",
-        imgSrc: "https://img.icons8.com/color/48/json--v1.svg",
+        imgSrc: "https://img.icons8.com/color/48/json--v1.png",
         infoSrc: "https://www.json.org/json-en.html",
         group: ToolDataGroupEnum.DataTools
     }),
     "xml": new ToolData({
         name: "XML",
-        imgSrc: "https://img.icons8.com/color/48/xml.svg",
+        imgSrc: "https://img.icons8.com/color/48/xml.png",
         infoSrc: "https://en.wikipedia.org/wiki/XML",
         group: ToolDataGroupEnum.DataTools
     }),
     "markdown": new ToolData({
         name: "MarkDown",
-        imgSrc: "https://img.icons8.com/color/48/markdown.svg",
+        imgSrc: "https://img.icons8.com/color/48/markdown.png",
         infoSrc: "https://en.wikipedia.org/wiki/Markdown",
         group: ToolDataGroupEnum.DataTools
     }),
@@ -192,7 +193,7 @@ export const TOOLS = {
     "linux": new ToolData({
         name: "Linux",
         infoSrc: "https://www.linux.org/",
-        imgSrc: "https://img.icons8.com/color/48/linux--v1.svg",
+        imgSrc: "https://img.icons8.com/color/48/linux--v1.png",
         group: ToolDataGroupEnum.OperationSystems
     }),
     "android": new ToolData({
@@ -209,13 +210,13 @@ export const TOOLS = {
     }),
     "yarn": new ToolData({
         name: "Yarn",
-        imgSrc: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-yarn-fast-reliable-and-secure-dependency-management-web-portal-logo-color-tal-revivo.svg",
+        imgSrc: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-yarn-fast-reliable-and-secure-dependency-management-web-portal-logo-color-tal-revivo.png",
         infoSrc: "https://yarnpkg.com/",
         group: ToolDataGroupEnum.PackageManagers
     }),
     "nuget": new ToolData({
         name: "Nuget",
-        imgSrc: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-nuget-a-free-and-open-source-package-manager-designed-for-the-microsoft-development-platform-logo-color-tal-revivo.svg",
+        imgSrc: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-nuget-a-free-and-open-source-package-manager-designed-for-the-microsoft-development-platform-logo-color-tal-revivo.png",
         infoSrc: "https://www.nuget.org",
         group: ToolDataGroupEnum.PackageManagers
     }),
@@ -256,11 +257,12 @@ export const TOOLS = {
     }),
     "unitTesting": new ToolData({
         name: "Unit testing",
-        imgSrc: "https://img.icons8.com/fluency/48/thin-test-tube.svg",
+        imgSrc: "https://img.icons8.com/fluency/48/thin-test-tube.png",
         infoSrc: "https://en.wikipedia.org/wiki/Unit_testing",
         group: ToolDataGroupEnum.Other
     }),
 };
 
 export const ALL_TOOLS = Object.values(TOOLS);
-export const LANGUAGE_TOOLS = ALL_TOOLS.filter(value => value.group === ToolDataGroupEnum.Language);
+export const GROUPED_TOOLS = _.groupBy(ALL_TOOLS, "group");
+export const LANGUAGE_TOOLS = GROUPED_TOOLS[ToolDataGroupEnum.Language];
