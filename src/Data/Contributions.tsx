@@ -1,10 +1,10 @@
 // @ts-ignore
 import {Collapse, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
-import {MonitorEye} from "mdi-material-ui";
+import {MonitorEye as MonitorEyeIcon, Run as RunIcon, Tree as TreeIcon} from "mdi-material-ui";
 import {ContributionData} from "../Models/ContributionData";
 import {TOOLS} from "./Tools";
 import React, {useState} from "react";
-import {ExpandLess, ExpandMore} from "@mui/icons-material";
+import {ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon, Money as MoneyIcon, Shield as ShieldIcon, Timer as TimerIcon, Merge as MergeIcon, Backup as BackupIcon} from "@mui/icons-material";
 
 const BotContributionBody = () => {
     const [isTriggersListOpen, setIsTriggersListOpen] = useState(false);
@@ -14,36 +14,64 @@ const BotContributionBody = () => {
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
             <ListItemButton onClick={() => setIsTriggersListOpen(!isTriggersListOpen)}>
                 <ListItemIcon>
-                    <MonitorEye/>
+                    <MonitorEyeIcon/>
                 </ListItemIcon>
                 <ListItemText primary={"Triggers"}/>
-                {isTriggersListOpen ? <ExpandLess /> : <ExpandMore />}
+                {isTriggersListOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </ListItemButton>
             <Collapse in={isTriggersListOpen} timeout="auto" unmountOnExit>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/ChangeOrganizationRepositoriesDefaultBranchTrigger.cs"} target={"_blank"}>
+                    <ListItemIcon>
+                        <TreeIcon/>
+                    </ListItemIcon>
                     <ListItemText primary={"Change default branch for organization repositories"}/>
                 </ListItemButton>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/ChangeOrganizationPullRequestsBaseBranchTrigger.cs"} target={"_blank"}>
-                    <ListItemText primary={"Change default branch of pull requests for organization repositories"}/>
+                    <ListItemIcon>
+                        <TreeIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary={"Change base branch of pull requests for organization repositories"}/>
                 </ListItemButton>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/CreateAndSaveOrganizationRepositoriesMigrationTrigger.cs"} target={"_blank"}>
+                    <ListItemIcon>
+                        <BackupIcon/>
+                    </ListItemIcon>
                     <ListItemText primary={"Create and save migrations for organization repositories"}/>
                 </ListItemButton>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/MergeDependabotBumpsTrigger.cs"} target={"_blank"}>
+                    <ListItemIcon>
+                        <MergeIcon/>
+                    </ListItemIcon>
                     <ListItemText primary={"Merge dependabot dependency bumps"}/>
                 </ListItemButton>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/LastCommitActivityTrigger.cs"} target={"_blank"}>
+                    <ListItemIcon>
+                        <TimerIcon/>
+                    </ListItemIcon>
                     <ListItemText primary={"Get contributors in n time to organization repositories"}/>
                 </ListItemButton>
                 <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/blob/main/csharp/Platform.Bot/Triggers/Decorators/AdminAuthorTriggerDecorator.cs"} target={"_blank"}>
+                    <ListItemIcon>
+                        <ShieldIcon/>
+                    </ListItemIcon>
                     <ListItemText primary={"Decorator to execute only if issue's author is organization admin"}/>
                 </ListItemButton>
             </Collapse>
-            <ListItemButton>One-time actions</ListItemButton>
+            <ListItemButton>
+                <ListItemIcon>
+                    <RunIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"One-time actions"}/>
+                </ListItemButton>
             <Collapse in={isOneTimeActionsListOpen} timeout="auto" unmountOnExit>
                 <ListItemText>Remove project from sln</ListItemText>
             </Collapse>
-            <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/tree/main/csharp/TraderBot"} target={"_blank"}>Trader bot to trade on Tinkoff investment platform</ListItemButton>
+            <ListItemButton component={"a"} href={"https://github.com/linksplatform/Bot/tree/main/csharp/TraderBot"} target={"_blank"}>
+                <ListItemIcon>
+                    <MoneyIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"Trader bot to trade on Tinkoff investment platform"}/>
+                </ListItemButton>
         </List>
        </>
 }
