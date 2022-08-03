@@ -145,3 +145,5 @@ export const CONTRIBUTIONS = {
 
     }),
 };
+
+export const ALL_CONTRIBUTIONS = Object.values(CONTRIBUTIONS);
