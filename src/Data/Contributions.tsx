@@ -2,7 +2,7 @@
 import {Collapse, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
 import {MonitorEye} from "mdi-material-ui";
 import {ContributionData} from "../Models/ContributionData";
-import {TOOLS} from "./TOOLS";
+import {TOOLS} from "./Tools";
 import React, {useState} from "react";
 import {ExpandLess, ExpandMore} from "@mui/icons-material";
 
@@ -80,7 +80,7 @@ export const CONTRIBUTIONS = {
 
     }), "linksplatform/data": new ContributionData({
         name: "linksplatform/data",
-        tools: [TOOLS["c++"]],
+        tools: [TOOLS["c++"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data",
         description: "A library for links storage implementation.",
         body: `
@@ -91,7 +91,7 @@ export const CONTRIBUTIONS = {
 `
     }), "linksplatform/data.doublets": new ContributionData({
         name: "linksplatform/data.doublets",
-        tools: [TOOLS["c++"]],
+        tools: [TOOLS["c++"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets",
         description: "A library with links storage implementation called doublets.",
         body: `
@@ -102,7 +102,7 @@ export const CONTRIBUTIONS = {
 `
     }), "linksplatform/data.doublets.sequences": new ContributionData({
         name: "linksplatform/data.doublets.sequences",
-        tools: [TOOLS["c#"]],
+        tools: [TOOLS["c#"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets.Sequences",
         description: "A library for doublets sequences management simplification.",
         body: `
@@ -114,22 +114,22 @@ export const CONTRIBUTIONS = {
 `
     }), "linksplatform/data.doublets.json": new ContributionData({
         name: "linksplatform/data.doublets.json",
-        tools: [TOOLS["c#"]],
+        tools: [TOOLS["c#"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets.Json",
         description: "A library, console applications, tools to import json to links storage and export json from links storage.",
     }), "linksplatform/data.doublets.xml": new ContributionData({
         name: "linksplatform/data.doublets.xml",
-        tools: [TOOLS["c#"]],
+        tools: [TOOLS["c#"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets.Xml",
         description: "A library, console applications, tools to import xml to links storage and export xml from links storage.",
     }), "linksplatform/data.doublets.gql": new ContributionData({
         name: "linksplatform/data.doublets.gql",
-        tools: [TOOLS["c#"]],
+        tools: [TOOLS["c#"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets.Gql",
         description: "A gql server console application to work with doublets storage.",
     }), "linksplatform/data.doublets.gql.client": new ContributionData({
         name: "linksplatform/data.doublets.gql.client",
-        tools: [TOOLS["c#"]],
+        tools: [TOOLS["c#"], TOOLS.testing],
         url: "https://github.com/linksplatform/Data.Doublets.Gql.Client",
         description: "A gql client to work with doublets storage."
     }), "linksplatform/scripts": new ContributionData({
