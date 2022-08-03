@@ -255,10 +255,10 @@ export const TOOLS = {
         infoSrc: "https://webpack.js.org",
         group: ToolDataGroupEnum.Other
     }),
-    "unitTesting": new ToolData({
-        name: "Unit testing",
+    "testing": new ToolData({
+        name: "Testing",
         imgSrc: "https://img.icons8.com/fluency/48/thin-test-tube.png",
-        infoSrc: "https://en.wikipedia.org/wiki/Unit_testing",
+        infoSrc: "https://en.wikipedia.org/wiki/Software_testing",
         group: ToolDataGroupEnum.Other
     }),
 };
